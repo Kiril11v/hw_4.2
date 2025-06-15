@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const num = prompt("enters 3 the identical numbers:");
+
+      if (!num?.trim() || isNaN(num) || !/^-?\d{3}$/.test(num)) {
+        alert("error: invalid number");
+      } 
+      
+      else {
+        const [a, b, c] = num.split(""); // розбиває рядок на 3 окремі символи
+
+        if (a === b && c === b) {
+          alert("the numbers " + Number(num) + " are identical");
+        } else if (a === b || b === c || a === c) {
+          alert("the numbers " + Number(num) + " are not all identical");
+        } else {
+          alert("numbers are different");
+        }
+      }
+    </script>
+  </body>
+</html>
